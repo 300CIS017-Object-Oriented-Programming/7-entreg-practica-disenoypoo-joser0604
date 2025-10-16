@@ -8,9 +8,7 @@ void mostrarMenuProductos(Tienda &tienda) {
     int opc = 0;
 
     do {
-        cout << "\n╔════════════════════════════════╗\n";
-        cout << "║   MENÚ DE PRODUCTOS           ║\n";
-        cout << "╚════════════════════════════════╝\n";
+        cout << "   MENÚ DE PRODUCTOS           \n";
         cout << "1. Ver inventario completo\n";
         cout << "2. Agregar nuevo producto\n";
         cout << "3. Actualizar stock de producto\n";
@@ -46,14 +44,12 @@ void mostrarMenuClientes(Tienda &tienda) {
     int opc = 0;
 
     do {
-        cout << "\n╔════════════════════════════════╗\n";
-        cout << "║   MENÚ DE CLIENTES            ║\n";
-        cout << "╚════════════════════════════════╝\n";
+        cout << "   MENU DE CLIENTES            \n";
         cout << "1. Ver todos los clientes\n";
         cout << "2. Agregar nuevo cliente\n";
         cout << "3. Ver historial de compras de un cliente\n";
-        cout << "-1. Volver al menú principal\n";
-        cout << "\nSeleccione una opción: ";
+        cout << "-1. Volver al menU principal\n";
+        cout << "\nSeleccione una opcion: ";
         cin >> opc;
 
         switch (opc) {
@@ -67,10 +63,10 @@ void mostrarMenuClientes(Tienda &tienda) {
                 tienda.mostrarVentasPorCliente();
                 break;
             case -1:
-                cout << "Volviendo al menú principal...\n";
+                cout << "Volviendo al menu principal...\n";
                 break;
             default:
-                cout << "Opción no válida.\n";
+                cout << "Opcion no válida.\n";
                 break;
         }
     } while (opc != -1);
@@ -80,9 +76,7 @@ void mostrarMenuVentas(Tienda &tienda) {
     int opc = 0;
 
     do {
-        cout << "\n╔════════════════════════════════╗\n";
-        cout << "║   MENÚ DE VENTAS              ║\n";
-        cout << "╚════════════════════════════════╝\n";
+        cout << "   MENÚ DE VENTAS              \n";
         cout << "1. Realizar nueva venta\n";
         cout << "2. Ver todas las ventas\n";
         cout << "3. Ver ventas por cliente\n";
@@ -114,15 +108,13 @@ void menuPrincipal(Tienda &tienda) {
     int opc = 0;
 
     do {
-        cout << "\n╔════════════════════════════════════════╗\n";
-        cout << "║  SISTEMA DE GESTIÓN - ECOTIENDA VERDE ║\n";
-        cout << "╚════════════════════════════════════════╝\n";
-        cout << "1. Gestión de Productos\n";
-        cout << "2. Gestión de Clientes\n";
-        cout << "3. Gestión de Ventas\n";
+        cout << "  SISTEMA DE GESTION - ECOTIENDA VERDE \n";
+        cout << "1. Gestion de Productos\n";
+        cout << "2. Gestion de Clientes\n";
+        cout << "3. Gestion de Ventas\n";
         cout << "4. Ver resumen general\n";
         cout << "-1. Salir del sistema\n";
-        cout << "\nSeleccione una opción: ";
+        cout << "\nSeleccione una opciOn: ";
         cin >> opc;
 
         switch (opc) {
@@ -136,9 +128,7 @@ void menuPrincipal(Tienda &tienda) {
                 mostrarMenuVentas(tienda);
                 break;
             case 4:
-                cout << "\n╔════════════════════════════════╗\n";
-                cout << "║   RESUMEN GENERAL DEL SISTEMA  ║\n";
-                cout << "╚════════════════════════════════╝\n";
+                cout << "   RESUMEN GENERAL DEL SISTEMA  \n";
                 tienda.mostrarInventario();
                 cout << "\n";
                 tienda.mostrarClientes();
@@ -150,7 +140,7 @@ void menuPrincipal(Tienda &tienda) {
                 cout << "Cerrando sistema...\n";
                 break;
             default:
-                cout << "Opción no válida. Intente de nuevo.\n";
+                cout << "Opcion no valida. Intente de nuevo.\n";
                 break;
         }
     } while (opc != -1);
@@ -158,13 +148,9 @@ void menuPrincipal(Tienda &tienda) {
 
 int main() {
     cout << "\n";
-    cout << "╔═══════════════════════════════════════════════╗\n";
-    cout << "║                                               ║\n";
-    cout << "║     BIENVENIDO A ECOTIENDA VERDE             ║\n";
-    cout << "║   Sistema de Gestión de Ventas e Inventario  ║\n";
-    cout << "║                                               ║\n";
-    cout << "╚═══════════════════════════════════════════════╝\n";
-    cout << "\n";
+    cout << "     BIENVENIDO A ECOTIENDA VERDE             \n";
+    cout << "   Sistema de Gestion de Ventas e Inventario  \n";
+
 
     Tienda tienda;
     menuPrincipal(tienda);
