@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/v3rVTS9D)
 # Sistema de Gestión de Ventas e Inventario para una Tienda Ecológica
 
 ## 🌱 Introducción y Motivación
@@ -89,3 +90,96 @@ Además, deberán crear un método en la clase `Tienda` que permita inicializar 
 - Apuntadores para la creación y manejo dinámico de objetos.
 - Cada clase debe tener constructores y destructores claramente definidos. Recuerden que todas las clases deben tener constructores sin parámetros
 - La aplicación principal debe desarrollarse en `main.cpp` con un menú interactivo para usar todas las funcionalidades disponibles. Toma de ejemplo el del ejercicio de las torres de Niza disponible en: https://github.com/lufe089/ejm_mem_dinamica_obj
+
+
+
+  classDiagram
+    class Producto{
+      -string codigo
+      -string nombre
+      -float precio
+      -int cantidadStock
+      +Producto()
+      +Producto(codigo, nombre, precio, cantidadStock)
+      +~Producto()
+      +mostrarDatos()
+      +actualizarStock(cantidad)
+      +calcularValorTotal()
+      +getCodigo()
+      +setCodigo(codigo)
+      +getNombre()
+      +setNombre(nombre)
+      +getPrecio()
+      +setPrecio(precio)
+      +getCantidadStock()
+      +setCantidadStock(cantidad)
+    }
+    class Cliente {
+        -long identificacion
+        -string nombre
+        -string email
+        -vector~Venta*~ historialCompras
+        +Cliente()
+        +Cliente(id, nombre, email)
+        +~Cliente()
+        +mostrarDatos()
+        +agregarVenta(venta)
+        +mostrarHistorial()
+        +calcularTotalCompras()
+        +getIdentificacion()
+        +setIdentificacion(id)
+        +getNombre()
+        +setNombre(nombre)
+        +getEmail()
+        +setEmail(email)
+    }
+
+    class Venta {
+        -int numeroVenta
+        -string fecha
+        -Producto* producto
+        -int cantidad
+        -float totalVenta
+        -calcularTotal()
+        +Venta()
+        +Venta(numero, fecha, producto, cantidad)
+        +~Venta()
+        +mostrarDatos()
+        +getNumeroVenta()
+        +setNumeroVenta(numero)
+        +getFecha()
+        +setFecha(fecha)
+        +getProducto()
+        +setProducto(producto)
+        +getCantidad()
+        +setCantidad(cantidad)
+        +getTotalVenta()
+    }
+
+    class Tienda {
+        -string nombreTienda
+        -vector~Producto*~ inventario
+        -vector~Cliente*~ clientes
+        -vector~Venta*~ ventas
+        -int contadorVentas
+        -inicializarDatos()
+        +Tienda()
+        +~Tienda()
+        +agregarProducto()
+        +agregarCliente()
+        +realizarVenta()
+        +actualizarInventario()
+        +mostrarInventario()
+        +mostrarClientes()
+        +mostrarVentas()
+        +mostrarVentasPorCliente()
+        +calcularValorTotalInventario()
+        +buscarProducto(codigo)
+        +buscarCliente(id)
+    }
+
+    Tienda "1" *-- "0..*" Producto : contiene
+    Tienda "1" *-- "0..*" Cliente : gestiona
+    Tienda "1" *-- "0..*" Venta : registra
+    Cliente "1" *-- "0..*" Venta : realiza
+    Venta "1" --> "1" Producto : compra
