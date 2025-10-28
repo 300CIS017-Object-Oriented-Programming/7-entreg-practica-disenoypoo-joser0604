@@ -83,7 +83,7 @@ void Tienda::agregarProducto() {
     Producto *nuevoProducto = new Producto(codigo, nombre, precio, cantidad);
     inventario.push_back(nuevoProducto);
 
-    cout << "\n✓ Producto agregado exitosamente.\n";
+    cout << "\n Producto agregado exitosamente.\n";
 }
 
 void Tienda::agregarCliente() {
@@ -105,7 +105,7 @@ void Tienda::agregarCliente() {
     Cliente *nuevoCliente = new Cliente(identificacion, nombre, email);
     clientes.push_back(nuevoCliente);
 
-    cout << "\n✓ Cliente agregado exitosamente.\n";
+    cout << "\n Cliente agregado exitosamente.\n";
 }
 
 void Tienda::realizarVenta() {
@@ -152,7 +152,7 @@ void Tienda::realizarVenta() {
     ventas.push_back(nuevaVenta);
     producto->actualizarStock(-cantidad);
 
-    cout << "\n✓ Venta realizada exitosamente.\n";
+    cout << "\n Venta realizada exitosamente.\n";
     cout << "Total de la venta: $" << nuevaVenta->getTotalVenta() << "\n";
 }
 
@@ -168,7 +168,7 @@ void Tienda::actualizarInventario() {
 
     Producto *producto = buscarProducto(codigo);
     if (producto == nullptr) {
-        cout << "❌ Producto no encontrado.\n";
+        cout << " Producto no encontrado.\n";
         return;
     }
 
@@ -287,6 +287,6 @@ Tienda::~Tienda() {
         delete ventas[i];
     }
 
-    cout << "✓ Todos los datos han sido eliminados correctamente.\n";
+    cout << " Todos los datos han sido eliminados correctamente.\n";
     cout << "¡Hasta luego!\n";
 }
